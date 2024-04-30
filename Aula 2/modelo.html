@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo Aula 2</title>
+</head>
+<body>
+    <h1>Permissão de Habilitação Automobilistica no Brasil</h1>
+    <p>Nome:<span id="nomepessoa"></span></p>
+    <p>Idade:<span id="idadepessoa"></span></p>
+    <p>Permissão para Adquirir Habilitação:<span id="permissaopessoa"></span></p>
+
+<script>
+    let nome;
+    let idade;
+    let permissao;
+
+    nome = prompt("Digite o seu nome"); //prompt é oq vale como um escreval
+    idade = prompt("Digite o sua idade");
+
+    if(idade >=18){
+        permissao = "Sim";
+    }else{
+        permissao = "Não";
+    }
+
+    // console.log(permissao); Para mostrar no console do browse
+
+    document.getElementById('nomepessoa').innerHTML = nome;
+    document.getElementById('idadepessoa').innerHTML = idade;
+    document.getElementById('permissaopessoa').innerHTML = permissao;
+
+</script>
+
+</body>
+</html>

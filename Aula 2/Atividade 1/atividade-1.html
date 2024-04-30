@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 1 JavaScript</title>
+</head>
+<body>
+    <h1>Voto</h1>
+    <p>Nome:<span id="nome"></span></p>
+    <p>Idade:<span id="idade"></span></p>
+    <p>Voto:<span id="voto"></span></p>
+
+<script>
+    let nome;
+    let idade;
+    let voto;
+
+    nome = prompt("Digite o seu nome"); //prompt é oq vale como um escreval
+    idade = prompt("Digite o sua idade");
+
+    if(idade <=17){
+        voto = "Seu voto é opcional";
+    }else{
+        voto = "Você é obrigado a votar";
+    }
+    if(idade >=65){
+        voto = "Seu voto é opcional";
+    }    
+    
+
+    // console.log(permissao); Para mostrar no console do browse
+
+    document.getElementById('nome').innerHTML = nome;
+    document.getElementById('idade').innerHTML = idade;
+    document.getElementById('voto').innerHTML = voto;
+
+</script>
+
+</body>
+    </html>
