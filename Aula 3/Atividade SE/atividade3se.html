@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AtividadeSE</title>
+</head>
+<body>
+    <h1>Leia os anos</h1>
+        <p>nome da primeira pessoa: <span id="nome"></span></p>
+        <p>Ano de nascimento da primeira pessoa: <span id="ano"></span></p>
+        <p>nome da segunda pessoa: <span id="nome2"></span></p>
+        <p>Ano de nascimento da segunda pessoa: <span id="ano2"></span></p>
+        <p>resultado: <span id="resultado"></span></p>
+
+        <script>
+            let nome
+            let ano
+            let nome2;
+            let ano2;
+            let resultado;
+
+            nome = prompt("nome da primeira pessoa")
+            ano = prompt("ano da primeira pessoa")
+            nome2 = prompt("nome da segunda pessoa")
+            ano2 = prompt("ano da segunda pessoa")
+
+            resultado;
+            if (ano2 > ano)
+                resultado = "A primeira pessoa é mais velha que a da segunda pessoa"
+
+
+            if (ano > ano2)
+                resultado = "A segunda pessoa é mais velha que a da primeira pessoa"
+
+
+            document.getElementById('nome').innerHTML = nome;
+            document.getElementById('nome2').innerHTML = nome2;
+            document.getElementById('ano').innerHTML = ano;
+            document.getElementById('ano2').innerHTML = ano2;
+            document.getElementById('resultado').innerHTML = resultado;
+
+        </script>
+    
+</body>
+</html>

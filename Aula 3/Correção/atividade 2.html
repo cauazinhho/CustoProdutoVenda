@@ -1,0 +1,47 @@
+[09:59] OTAVIO FIDALGO
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>atividade 3 aula 2</title>
+</head>
+<body>
+    <h1>Fast Food</h1>
+    <h2>Menu</h2>
+    <p>Hot dog: <span id="hotdog"></span></p>
+    <p>Hambúrguer : <span id="hamburguer"></span></p>
+    <p>Cheeseburguer: <span id="cheese"></span></p>
+    <p>Refrigerante em lata : <span id="refri"></span></p>
+    <p>Batatas fritas: <span id="batata"></span></p>
+    <p>Total: <span id="total"></span></p>
+ 
+    <script>
+        let hotdog;
+        let hamburguer;
+        let cheese;
+        let refri;
+        let batata;
+        let total;
+ 
+        hotdog = Number(prompt("Digite a quantidade de hot dogs que deseja."));
+        hamburguer = Number(prompt("Digite a quantidade de hamburguers que deseja."));
+        cheese = Number(prompt("Digite a quantidade de cheeseburguers que deseja."));
+        refri = Number(prompt("Digite a quantidade de refrigerantes de lata deseja."));
+        batata = Number(prompt("Digite quantas porções de batatas deseja."));
+ 
+        total =((hotdog * 1) + (hamburguer * 1.30) + (cheese * 1.50) + (refri * 1) + (batata * 0.80))
+ 
+ 
+        document.getElementById('hotdog').innerHTML = hotdog;
+        document.getElementById('hamburguer').innerHTML = hamburguer;
+        document.getElementById('cheese').innerHTML = cheese;
+        document.getElementById('refri').innerHTML = refri;
+        document.getElementById('batata').innerHTML = batata;
+        document.getElementById('total').innerHTML = total;
+ 
+    </script>
+   
+</body>
+</html>
