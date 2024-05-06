@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AtividadeSE</title>
+</head>
+
+<body>
+    <h1>Leia se é impar ou par</h1>
+    <p>Numero: <span id="numero"></span></p>
+    <p>Resultado: <span id="resultado"></span></p>
+
+
+    <script>
+
+        let numero;
+        let resultado;
+
+        numero = Number(prompt("Digite o numero"))
+
+
+        if (numero % 2 == 0) {
+            resultado ="Numero é par";
+        }else{
+            resultado ="Numero é ímpar"
+        }
+
+       
+
+        document.getElementById('numero').innerHTML = numero;
+        document.getElementById('resultado').innerHTML = resultado;
+
+
+    </script>
+</body>
+
+</html>

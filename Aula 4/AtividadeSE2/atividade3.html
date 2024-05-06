@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AtividadeSE</title>
+</head>
+<body>
+    <h1>Empresa que dá premio</h1>
+    <p>Meta a ser alcançada 5000</p>
+    <p>Funcionario 1: <span id="funcionario1"></span></p>
+    <p>Metas: <span id="metas"></span></p>
+    
+    <p>resultado: <span id="resultado"></span></p>
+ 
+ 
+    <script>
+ 
+        let funcionario1;
+        let metas1;
+        let resultado;
+ 
+        
+        funcionario1 = prompt("Digite seu nome")
+        metas1 = Number(prompt("Digite a meta que você alcançou"))
+        
+ 
+        funcionario1;
+        if(metas1 <=4999){
+            resultado = "Não ganhou!"
+        }else{
+            resultado = "Parabens você ganhou!!"
+        }
+ 
+ 
+        document.getElementById('funcionario1').innerHTML = funcionario1;
+        document.getElementById('metas').innerHTML = metas1;
+        
+        document.getElementById('resultado').innerHTML = resultado;
+ 
+ 
+    </script>
+</body>
+</html>
