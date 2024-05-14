@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Final</title>
+</head>
+<body>
+    <h1>Comissão de Funcionarios</h1>
+    <p>Funcionarios: <span id="funcionarios"></span></p>
+    <p>Produtos Vendidos: <span id="produtos"></span></p>
+    <p>Valor da Comissão: <span id="comissao"></span></p>
+
+    <script>
+        let funcionarios = (prompt("Digite o nome do funcionario: "))
+        let produtos = Number(prompt("Digite o valor de produtos vendidos pelo funcionario: "))
+        let comissao
+
+        if (produtos > 500){
+            comissao = (produtos * 2)
+        }else if (produtos <=500 && produtos >250) {
+            comissao = (produtos * 1.5)
+        }else{
+            (produtos <250)
+                comissao = (produtos * 1)
+        }
+
+
+        document.getElementById('funcionarios').innerHTML = funcionarios;
+        document.getElementById('produtos').innerHTML = produtos;
+        document.getElementById('comissao').innerHTML = comissao;
+    </script>
+    
+    
+</body>
+</html>

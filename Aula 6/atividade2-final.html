@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Final</title>
+</head>
+
+<body>
+    <h1>Data de Nascimento da Pessoa</h1>
+    <p>Nome: <span id="nome"></span></p>
+    <p>Dia: <span id="dia"></span></p>
+    <p>Mes: <span id="mes"></span></p>
+    <p>Ano: <span id="ano"></span></p>
+    <p>Data de Nascimento: <span id="nascimento"></span></p>
+
+    <script>
+        let nome = (prompt("Digite o seu nome: "))
+        let dia = Number(prompt("Digite o dia que você nasceu (1 a 31): "))
+        let mes = Number(prompt("Digite o mes que você nasceu (1 - janeiro, 2 - fevereiro, 3 - março, 4 - abril, 5 - maio, 6 - junho, 7 - julho, 8 - agosto, 9 - setembro, 10 - outubro, 11 - novembro, 12 - dezembro): "))
+        let ano = Number(prompt("Digite o ano que nasceu: "))
+        let nascimento
+
+        if (mes == 1) {
+            nascimento = (dia + " " + "janeiro " + "de " + ano)
+        }
+
+        if (mes == 2) {
+            nascimento = (dia + " " + "fevereiro " + "de " + ano)
+        }
+
+        if (mes == 3) {
+            nascimento = (dia + " " + "março " + "de " + ano)
+        }
+
+        if (mes == 4) {
+            nascimento = (dia + " " + "abril " + "de " + ano)
+        }
+
+        if (mes == 5) {
+            nascimento = (dia + " " + "maio " + "de " + ano)
+        }
+
+        if (mes == 6) {
+            nascimento = (dia + " " + "junho " + "de " + ano)
+        }
+
+        if (mes == 7) {
+            nascimento = (dia + " " + "julho " + "de " + ano)
+        }
+
+        if (mes == 8) {
+            nascimento = (dia + " " + "agosto " + "de " + ano)
+        }
+
+        if (mes == 9) {
+            nascimento = (dia + " " + "setembro " + "de " + ano)
+        }
+
+        if (mes == 10) {
+            nascimento = (dia + " " + "outubro " + "de " + ano)
+        }
+
+        if (mes == 11) {
+            nascimento = (dia + " " + "novembro " + "de " + ano)
+        }
+        
+         if (mes == 12) {
+            nascimento = (dia + " " + "dezembro " + "de " + ano)
+        }
+
+
+        document.getElementById('nome').innerHTML = nome;
+        document.getElementById('dia').innerHTML = dia;
+        document.getElementById('mes').innerHTML = mes;
+        document.getElementById('ano').innerHTML = ano;
+        document.getElementById('nascimento').innerHTML = nascimento;
+    </script>
+
+
+</body>
+
+</html>
