@@ -1,0 +1,61 @@
+[08:52] OTAVIO FIDALGO
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Cursos</h1>
+    <p>Nome do aluno(a): <span id="nome"></span></p>
+    <p>Curso escolhido: <span id="curso"></span></p>
+    <p>Valor do curso: <span id="valor"></span></p>
+ 
+    <script>
+        let nome;
+        let curso;
+        let valor;
+        let valor1;
+        let valor2;
+ 
+        valor1 = 500
+        valor2 = 400
+ 
+        nome = prompt("Digite seu nome.");
+        curso = Number (prompt("Digite o curso que deseja.\n 1-Direito,\n 2-Informática,\n 3-Administração,\n 4-Design"));
+       
+       
+        switch (curso) {
+            case 1:
+                curso = "Direito"
+                break;
+            case 2:
+                curso = "Informatica"
+                break;
+            case 3:
+                curso = "Administracao"
+                break;
+            case 4:
+                curso = "Design"
+                break;
+       
+            default: 1234
+                break;
+        }
+ 
+        if(curso == 1){
+            valor = valor1
+        }else{
+            valor = valor2
+        }
+ 
+        document.getElementById('nome').innerHTML = nome;
+        document.getElementById('curso').innerHTML = curso;
+        document.getElementById('valor').innerHTML = valor;
+ 
+    </script>
+   
+</body>
+</html>
