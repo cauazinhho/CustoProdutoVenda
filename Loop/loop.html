@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop</title>
+</head>
+
+<body>
+    <p id="nome"></p>
+    <p id="timeFut"></p>
+
+    <script>
+
+        //for
+
+        for (let i = 5; i <= 10; i++) {
+            document.getElementById("nome").innerHTML += "Emerson "
+
+        }
+
+        //while
+
+        let nome = prompt("Digite um nome")
+
+        while (nome == "Emerson") {
+            document.getElementById("nome").innerHTML += "Cauazinho Mil Gr4w!! "
+            nome = prompt("Digite um nome")
+        }
+
+        // do while - vai rodar uma unica vez
+
+        
+        do {
+            document.getElementById("timeFut").innerHTML += timeFut;
+            timeFut = prompt("Digite um time de futebol")
+
+        } while (timeFut != "Corinthians")
+
+
+
+    </script>
+</body>
+
+</html>
