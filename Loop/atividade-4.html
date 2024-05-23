@@ -13,24 +13,26 @@
         acertou o número x (escolhido pelo jogador 1) em x tentativas (quantidade de tentativas do jogador 2) </h3>
 
 
-    <p id="tentativas"></p>
+    <p>Número jogador 1: <span id="jogador1"></span></p>
+    <p>Tentativa até acertar: <span id="tentativa"></span></p>
 
 
     <script>
 
-        let numeroEscolhido = ("Jogador 1, escolha um número de 1 a 10:" )
-        let tentativa = 0;
+        let jogador1 = Number(prompt("Digite um numero de 0 a 10. Jogador 1"))
+        let jogador2 = 11
+        let tentativas = 0
 
 
-        while (adivinhacao) {
+        while (jogador1 != jogador2) {
+            tentativas++;
+
+            jogador2 = Number(prompt("Digite um numero de 0 a 10. Jogador 2"))
             
-           let palpite = prompt("Jogador 2, escolha um número de 1 a 10:")
-           tentativa++
-            
-           
+            document.getElementById("numero").innerHTML += "O jogador dois acertou o número: " 
+            document.getElementById("tentativas").innerHTML += "O jogador dois acertou o número em " + tentativas + " tentativas"
         }
-        
-        document.getElementById("tentativas").innerHTML += adivinhacao
+
 
     </script>
 
