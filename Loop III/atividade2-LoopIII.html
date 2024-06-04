@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Avaliação dos Alunos</h1>
+    <p id="notas"></p>
+
+    <script>
+        // Desejar cadastrar peças. \n 1 - Sim \n 2 - Não
+        let opcao = prompt("Avaliação dos alunos. \n 1 - Cadastrar um aluno \n2 - Não cadastrar")
+        let avaliacao = ""
+        let aulas = 32
+
+
+        while (opcao == "1") {
+
+            let nome = prompt("Digite o nome")
+            let nota1 = Number(prompt("Digite a primeira nota: "))
+            let nota2 = Number(prompt("Digite a segunda nota: "))
+            let nota3 = Number(prompt("Digite a terceira nota: "))
+
+            let media = (nota1 + nota2 + nota3) / 3
+
+            if (media >= 7) {
+                avaliacao = media
+            }else{
+                media = "reprovado"
+            }
+
+
+
+            opcao = prompt("Avaliação dos alunos. \n 1 - Cadastrar um aluno \n2 - Não cadastrar")
+        }
+
+       
+
+        document.getElementById("notas").innerHTML = "Nota: " + avaliacao
+
+    </script>
+
+</body>
+
+</html>
