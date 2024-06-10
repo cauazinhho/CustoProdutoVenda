@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetores</title>
+</head>
+
+<body>
+    <div id="resultado"></div>
+
+    <script>
+
+        const nomeAlunos = ["Maria", " Mariana", " Mariluz", " Mariaclid", " Marinoite", " Mariazinha"]
+        document.getElementById("resultado").innerHTML += nomeAlunos + "</br>"
+
+
+        nomeAlunos[1] = " João"
+        document.getElementById("resultado").innerHTML += nomeAlunos
+
+
+        //Para mostrar tantos itens que tem na array
+        let numItensArray = nomeAlunos.length
+        document.getElementById("resultado").innerHTML += "</br> Itens na array:" + numItensArray
+
+
+        //Para mostrar nome da pessoa na tela
+        let mostrar = nomeAlunos[nomeAlunos.length - 1];
+        document.getElementById("resultado").innerHTML += "</br> Mostrar nome:" + mostrar
+        "</br>"
+
+        tagHtmla = "<ul>"
+        for (let i = 0; i < nomeAlunos.length; i++) {
+            tagHtmla += "<li>" + nomeAlunos[i] + "</li>,"
+
+        }
+        tagHtmla += "<ul>"
+        document.getElementById("resultado").innerHTML += tagHtmla
+
+
+    </script>
+
+</body>
+
+</html>

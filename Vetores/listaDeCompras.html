@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Compras</title>
+</head>
+
+<body>
+    <h1>Lista de Compras</h1>
+    <div id="itens"></div>
+    <button onclick="addItens()">Adicionar</button>
+    <button onclick="alterarItens()">Alterar</button>
+    <button onclick="deletarItens()">Deletar Último</button>
+    <button onclick="deletarEscolha()">Qual você deseja deletar</button>
+
+    <script>
+        const itensLista = ["Vinagre", "Sabonete"]
+        document.getElementById("itens").innerHTML = itensLista;
+        exibirItens()
+
+
+        function exibirItens() {
+            itensHtml = "<ol>";
+            for (let i = 0; i < itensLista.length; i++) {
+                itensHtml += "<li>" + itensLista[i] + "</li>"
+            }
+            itensHtml += "<ol>";
+            document.getElementById("itens").innerHTML = itensHtml;
+        }
+
+        function addItens() {
+            let compra = prompt("Digite o itens para compra.")
+            itensLista.push(compra)
+            document.getElementById("itens").innerHTML = itensLista;
+            exibirItens()
+        }
+        
+        // Apaga o último item da lista
+        function deletarItens() {
+            itensLista.pop();
+            exibirItens()
+        }
+        
+        function deletarEscolha() {
+            let deletar = prompt("Qual item você deseja deletar?")
+            itensLista[deletar-1] = itensLista.pop(deletar);
+            
+            document.getElementById("itens").innerHTML = itensLista;
+            exibirItens()
+        }
+
+        function alterarItens() {
+            let item = prompt("Qual itens deseja alterar?")
+            let itemConteudo = prompt("Digite o novo itens")
+
+            itensLista[item - 1] = itemConteudo
+            exibirItens()
+        }
+
+    </script>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
