@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Vetores</title>
+</head>
+
+<body>
+    <h1>Números em Ordem Decrescente</h1>
+    <div id="vetorNumero"></div>
+    
+
+    <script>
+        let numeros = [];
+
+        function lerVetor() {
+            for (let i = 0; i < 50; i++) {
+                let numero = Number(prompt("Digite o número "));
+                numeros.push(numero * 7);
+            }
+
+            exibirNumeros();
+
+        }
+        lerVetor();
+
+        function exibirNumeros() {
+            for (let i = 0; i < numeros.length; i++) {
+                for (let j = i + 1; j < numeros.length; j++) {
+                    if (numeros[i] < numeros[j]) {
+                        let decrescente = numeros[i];
+                        numeros[i] = numeros[j];
+                        numeros[j] = decrescente;
+                    }
+                }
+            }
+
+            let resultado = "";
+            for (let i = 0; i < numeros.length; i++) {
+                resultado += "<br>" + numeros[i] + "</br>";
+            }
+
+            document.getElementById("vetorNumero").innerHTML = resultado;
+        }
+        
+        </script>
+</body>
+
+</html>
