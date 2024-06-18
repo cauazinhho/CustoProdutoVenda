@@ -8,23 +8,30 @@
 </head>
 
 <body>
-    <h1>Números em Ordem Decrescente</h1>
-    <div id="vetorNumero"></div>
     
+    <h1>Números em Ordem Decrescente</h1>
+    <p>7. Leia um vetor de 50 números e monte outro com os valores do primeiro multiplicados
+     por sete, em ordem decrescente. Imprima os dois vetores.</p>
+    <div id="vetorNumero"></div>
+
 
     <script>
         let numeros = [];
+        let armazenar = []
 
         function lerVetor() {
-            for (let i = 0; i < 50; i++) {
+            for (let i = 0; i < 5; i++) {
                 let numero = Number(prompt("Digite o número "));
+                armazenar.push(numero)
                 numeros.push(numero * 7);
+
             }
 
             exibirNumeros();
 
         }
         lerVetor();
+
 
         function exibirNumeros() {
             for (let i = 0; i < numeros.length; i++) {
@@ -37,15 +44,20 @@
                 }
             }
 
-            let resultado = "";
+            let resultado = "<p>Números originais antes da multiplicação:</p>";
+            for (let i = 0; i < armazenar.length; i++) {
+                resultado += "<br>" + armazenar[i] + "</br>";
+            }
+
+            resultado += "<p>Números multiplicados em ordem decrescente:</p>";
             for (let i = 0; i < numeros.length; i++) {
-                resultado += "<br>" + numeros[i] + "</br>";
+                resultado += "</br>" + numeros[i] + "</br>";
             }
 
             document.getElementById("vetorNumero").innerHTML = resultado;
         }
-        
-        </script>
+
+    </script>
 </body>
 
 </html>
