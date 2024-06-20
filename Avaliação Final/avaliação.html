@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação Final</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body>
+    <!-- Desenvolver um Algoritmo com os seguintes requisitos -->
+    <!-- Tema livre -->
+    <!-- Tem que ter: if, else, switch, loop, vetor, função, button -->
+    <!-- Interação com usuário -->
+    <!-- css -->
+    <!-- js pode colocar no documento e exportar -->
+    <h1>Loja de camiseta</h1>
+    <div id="tudo"></div>
+    <button onclick="lerVetores()">Conheça nossos Produtos</button>
+
+    <script>
+        const roupas = [];
+        const quantidades = []
+
+        function lerVetores() {
+            let opcao = prompt("Deseja fazer mais uma escolha de pedido de roupa? \n 1 - Sim \n 2 - Não")
+
+            while (opcao == "1") {
+                let tipoRoupa = Number(prompt(
+                    "Qual modelo de roupa você deseja?\n" +
+                    "1 - Camiseta Básica\n" +
+                    "2 - Camiseta Manga Longa\n" +
+                    "3 - Regatas\n" +
+                    "4 - Moletom\n" +
+                    "5 - Calças\n" +
+                    "Escolha o número correspondente: "
+                ))
+
+
+                let quantidade = Number(prompt("Quantidade da roupa da sua escolha? "));
+
+                roupas.push(tipoRoupa);
+                quantidades.push(quantidade);
+
+                opcao = prompt("Deseja fazer mais uma escolha de pedido de roupa? \n 1 - Sim \n 2 - Não")
+            }
+        }
+
+        function calcularDesconto() {
+            let totalRoupas = 0;
+            for (let i = 0; i < quantidades.length; i++) {
+                totalRoupas += quantidades[i];
+            }
+
+            let desconto = 0;
+            if (totalRoupas >= 3) {
+                desconto = 10;
+            }
+
+            let valorTotal = 0;
+            for (let i = 0; i < roupas.length; i++) {
+                let preco = 0;
+                let nomeRoupa = '';
+
+                switch (roupas[i]) {
+                    case 1:
+                        preco = 20;
+                        nomeRoupa = "Camiseta Básica";
+                        break;
+                    case 2:
+                        preco = 30;
+                        nomeRoupa = "Camiseta Manga Longa";
+                        break;
+                    case 3:
+                        preco = 15;
+                        nomeRoupa = "Regatas";
+                        break;
+                    case 4:
+                        preco = 40;
+                        nomeRoupa = "Moletom";
+                        break;
+                    case 5:
+                        preco = 50;
+                        nomeRoupa = "Calças";
+                        break;
+                    default:
+
+                }
+
+                let subtotal = precoUnitario * quantidades[i];
+                valorTotal += subtotal;
+
+                let valorDesconto = (desconto / 100) * valorTotal;
+                let valorFinal = valorTotal - valorDesconto;
+
+            }
+            let valorFinal = valorTotal - valorDesconto;
+
+            lerEscolhas();
+            calcularDesconto()
+        }
+
+
+        document.getElementById("tudo").innerHTML = valorDesconto + "<br>" + valorFinal
+
+
+    </script>
+
+</body>
+
+</html>
+
+<!-- Codigo ex -->
+
+<!-- let roupas = [];
+let quantidades = [];
+
+function lerEscolhas() {
+    let opcao = '1';
+    
+    while (opcao === '1') {
+        let tipoRoupa = Number(prompt(
+            "Qual modelo de roupa você deseja?\n" +
+            "1 - Camiseta Básica\n" +
+            "2 - Camiseta Manga Longa\n" +
+            "3 - Regatas\n" +
+            "4 - Moletom\n" +
+            "5 - Calças\n" +
+            "Escolha o número correspondente: "
+        ));
+
+        let quantidade = Number(prompt("Quantidade da roupa da sua escolha? "));
+
+        roupas.push(tipoRoupa);
+        quantidades.push(quantidade);
+
+        opcao = prompt("Deseja fazer mais uma escolha de pedido de roupa?\n" +
+                       "1 - Sim\n" +
+                       "2 - Não\n" +
+                       "Escolha o número correspondente: ");
+    }
+}
+
+function calcularDesconto() {
+    let totalRoupas = 0;
+    for (let i = 0; i < quantidades.length; i++) {
+        totalRoupas += quantidades[i];
+    }
+
+    let desconto = 0;
+    if (totalRoupas >= 3) {
+        desconto = 10;
+    }
+
+    let valorTotal = 0;
+    for (let i = 0; i < roupas.length; i++) {
+        let precoUnitario = 0;
+        let nomeRoupa = '';
+
+        switch (roupas[i]) {
+            case 1:
+                precoUnitario = 20; // Exemplo de preço para Camiseta Básica
+                nomeRoupa = "Camiseta Básica";
+                break;
+            case 2:
+                precoUnitario = 30; // Exemplo de preço para Camiseta Manga Longa
+                nomeRoupa = "Camiseta Manga Longa";
+                break;
+            case 3:
+                precoUnitario = 15; // Exemplo de preço para Regatas
+                nomeRoupa = "Regatas";
+                break;
+            case 4:
+                precoUnitario = 40; // Exemplo de preço para Moletom
+                nomeRoupa = "Moletom";
+                break;
+            case 5:
+                precoUnitario = 50; // Exemplo de preço para Calças
+                nomeRoupa = "Calças";
+                break;
+            default:
+                console.log("Opção inválida.");
+                continue;
+        }
+
+        let subtotal = precoUnitario * quantidades[i];
+        valorTotal += subtotal;
+
+        console.log(`${nomeRoupa}: ${quantidades[i]} unidades - Subtotal: R$ ${subtotal.toFixed(2)}`);
+    }
+
+    let valorDesconto = (desconto / 100) * valorTotal;
+    let valorFinal = valorTotal - valorDesconto;
+    
+
+    console.log(`Valor total: R$ ${valorTotal.toFixed(2)}`);
+    console.log(`Desconto aplicado (${desconto}%): R$ ${valorDesconto.toFixed(2)}`);
+    console.log(`Valor a pagar: R$ ${valorFinal.toFixed(2)}`);
+}
+
+lerEscolhas();
+calcularDesconto(); -->

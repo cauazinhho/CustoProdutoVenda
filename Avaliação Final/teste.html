@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Loja de Camiseta</title>
+</head>
+
+<body>
+    <div id="container">
+        <h1>Loja de camiseta</h1>
+        <h2>Conheça nossos produtos</h2><br>
+
+        <p>Camisetas Basicas: R$ 20,00</p>
+        <p>Camisetas Mangas Longas: R$ 30,00</p>
+        <p>Regatas: R$ 15,00</p>
+        <p>Moletons: R$ 40,00</p>
+        <p>Calças: R$ 50,00</p><br>
+
+        <p>Qualquer produto acima de 3 quantidades da loja, terá um desconto de 10%</p><br><br>
+
+        <p>Acesse o botão abaixo para fazer uma compra do seu desejo</p><br>
+
+        <button onclick="lerVetores()">Acesse nossa loja virtual</button><br><br>
+        <div id="tudo"></div>
+    </div>
+
+    <script>
+        const roupas = [];
+        const quantidades = [];
+
+        function lerVetores() {
+            let opcao = prompt("Deseja fazer mais uma escolha de pedido de roupa? \n 1 - Sim \n 2 - Não");
+
+            while (opcao == "1") {
+                let tipoRoupa = Number(prompt(
+                    "Qual modelo de roupa você deseja?\n" +
+                    "1 - Camiseta Básica\n" +
+                    "2 - Camiseta Manga Longa\n" +
+                    "3 - Regatas\n" +
+                    "4 - Moletom\n" +
+                    "5 - Calças\n" +
+                    "Escolha o número correspondente: "
+                ));
+
+                let quantidade = Number(prompt("Quantidade da roupa da sua escolha? "));
+
+                roupas.push(tipoRoupa);
+                quantidades.push(quantidade);
+
+                opcao = prompt("Deseja fazer mais uma escolha de pedido de roupa? \n 1 - Sim \n 2 - Não");
+            }
+
+            calcularDesconto(); // Chama a função para calcular desconto após escolhas
+        }
+
+        function calcularDesconto() {
+            let totalRoupas = 0;
+            for (let i = 0; i < quantidades.length; i++) {
+                totalRoupas += quantidades[i];
+            }
+
+            let desconto = 0;
+            if (totalRoupas >= 3) {
+                desconto = 10;
+            }
+
+            let valorTotal = 0;
+            for (let i = 0; i < roupas.length; i++) {
+                let preco = 0;
+                let nomeRoupa = '';
+
+                switch (roupas[i]) {
+                    case 1:
+                        preco = 20;
+                        nomeRoupa = "Camiseta Básica";
+                        break;
+                    case 2:
+                        preco = 30;
+                        nomeRoupa = "Camiseta Manga Longa";
+                        break;
+                    case 3:
+                        preco = 15;
+                        nomeRoupa = "Regatas";
+                        break;
+                    case 4:
+                        preco = 40;
+                        nomeRoupa = "Moletom";
+                        break;
+                    case 5:
+                        preco = 50;
+                        nomeRoupa = "Calças";
+                        break;
+                    default:
+
+                }
+
+                let subtotal = preco * quantidades[i];
+                valorTotal += subtotal;
+            }
+
+            let valorDesconto = (desconto / 100) * valorTotal;
+            let valorFinal = valorTotal - valorDesconto;
+
+
+            document.getElementById("tudo").innerHTML = "Valor do Desconto:" + "R$" + valorDesconto.toFixed(2) + "<br>" + "Valor Final a Pagar:" + "R$" + valorFinal.toFixed(2)
+        }
+    </script>
+</body>
+
+</html>
